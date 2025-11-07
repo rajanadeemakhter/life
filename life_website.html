@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Life — Designed by Raja Nadeem Akhter</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="description" content="Life — Real estate listings, recommended affiliate products, and lifestyle posts by Raja Nadeem Akhter" />
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green: #117a3b;
+    --gold: #c9a15a;
+    --accent:#004080;
+    --muted:#666;
+    --bg:#ffffff;
+    --card:#ffffff;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Roboto,Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#fbfbfb, #ffffff);color:#222;line-height:1.5}
+  header{background:linear-gradient(135deg,var(--gold),#fff);color:#083344;padding:18px 16px;position:sticky;top:0;z-index:60;border-bottom:1px solid rgba(0,0,0,0.04)}
+  .topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:1200px;margin:0 auto}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand .logo{width:56px;height:56px;border-radius:8px;background:linear-gradient(135deg,var(--green),#6fbf73);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:18px}
+  .brand h1{font-size:20px;margin:0;color:#083344}
+  nav a{color:#083344;text-decoration:none;margin-left:12px;font-weight:600}
+  nav a:hover{opacity:.9}
+  main{max-width:1200px;margin:28px auto;padding:0 16px}
+  .hero{background:#fff;border-radius:12px;color:#083344;padding:32px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;box-shadow:0 10px 30px rgba(15,40,20,0.04);border:1px solid rgba(201,161,90,0.12)}
+  .hero .left{max-width:760px}
+  .hero h2{font-size:28px;margin:0 0 8px;color:var(--green)}
+  .hero p{margin:0 0 12px;color:#444}
+  .cta{display:flex;gap:10px}
+  .btn{background:var(--green);color:#fff;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:700;box-shadow:0 6px 16px rgba(17,122,59,0.12)}
+  .btn.secondary{background:transparent;color:var(--accent);border:1px solid rgba(0,64,128,0.06)}
+  section{margin-top:28px}
+  h3.section-title{color:var(--accent);margin-bottom:12px;text-align:left}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+  .card{background:var(--card);border-radius:10px;overflow:hidden;box-shadow:0 6px 18px rgba(20,30,50,0.04);display:flex;flex-direction:column;border:1px solid rgba(0,0,0,0.03)}
+  .card img{width:100%;height:180px;object-fit:cover}
+  .card .body{padding:14px;flex:1;display:flex;flex-direction:column}
+  .card h4{margin:0 0 8px;color:var(--green)}
+  .card p{margin:0 0 12px;color:var(--muted);font-size:0.95rem}
+  .meta{margin-top:auto;display:flex;gap:8px;align-items:center}
+  .small-btn{padding:8px 10px;border-radius:8px;text-decoration:none;font-weight:600;border:none;cursor:pointer}
+  .btn-call{background:#004080;color:#fff}
+  .btn-wa{background:#25D366;color:#fff}
+  .small-btn.secondary{background:transparent;color:var(--accent);border:1px solid rgba(0,0,0,0.06)}
+  .product .price{color:var(--green);font-weight:700;margin-top:6px}
+  .post .excerpt{color:var(--muted);font-size:0.95rem}
+  .admin-open{background:transparent;color:var(--accent);padding:8px 12px;border-radius:8px;border:1px solid rgba(0,0,0,0.06);cursor:pointer}
+  footer{margin-top:36px;padding:18px 16px;text-align:center;color:#555;background:linear-gradient(180deg,#fff,#fbfbfb);border-top:1px solid rgba(0,0,0,0.04)}
+  .whatsapp-fixed{position:fixed;right:18px;bottom:18px;background:#25D366;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:26px;box-shadow:0 8px 20px rgba(0,0,0,0.18);z-index:999;cursor:pointer}
+  .socials{display:flex;gap:8px;justify-content:center;margin-top:8px}
+  .socials a{color:var(--accent);text-decoration:none;font-weight:700;padding:6px 8px;border-radius:6px;border:1px solid rgba(0,0,0,0.04);background:rgba(201,161,90,0.04)}
+  .muted{color:#666;font-size:0.95rem;margin-top:8px}
+  /* admin modal */
+  .modal{position:fixed;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.35);display:none;align-items:center;justify-content:center;padding:20px;z-index:120}
+  .sheet{background:#fff;border-radius:10px;max-width:980px;width:100%;padding:18px;box-shadow:0 12px 40px rgba(0,0,0,0.12)}
+  .form-row{display:flex;gap:8px;flex-wrap:wrap}
+  .form-row input,.form-row select,.form-row textarea{flex:1;padding:8px;border-radius:8px;border:1px solid #ddd}
+  .row-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:10px}
+  .danger{background:#e74c3c;color:#fff;padding:8px 12px;border-radius:8px;border:none}
+  .success{background:var(--green);color:#fff;padding:8px 12px;border-radius:8px;border:none}
+  @media(max-width:880px){.hero{flex-direction:column;align-items:flex-start}.hero h2{font-size:22px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="topbar">
+    <div class="brand">
+      <div class="logo">Life</div>
+      <div>
+        <h1>Life — Designed by Raja Nadeem Akhter</h1>
+        <div style="font-size:12px;color:#405a5a">Real Estate • Affiliate • Lifestyle</div>
+      </div>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:12px">
+      <nav>
+        <a href="#realestate">Real Estate</a>
+        <a href="#affiliate">Affiliate</a>
+        <a href="#lifestyle">Lifestyle</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button id="openAdmin" class="admin-open">Admin</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero" aria-label="intro">
+    <div class="left">
+      <h2>Find trusted properties & everyday inspirations</h2>
+      <p>Plots, apartments, high-rise units, shops, villas and farmhouses — curated and managed by Raja Nadeem Akhter. Explore listings, recommended products, and lifestyle posts.</p>
+      <div class="cta">
+        <a class="btn" href="#realestate">Browse Properties</a>
+        <a class="btn secondary" href="#affiliate">Shop Products</a>
+      </div>
+    </div>
+    <div class="right" style="min-width:260px">
+      <!-- small feature cards -->
+      <div class="card" style="padding:14px;display:flex;flex-direction:column;gap:8px">
+        <div style="font-weight:700;color:var(--accent)">Quick Contact</div>
+        <div style="color:var(--muted)">WhatsApp: <a href="https://wa.me/923005049603" target="_blank">Message</a></div>
+        <div style="color:var(--muted)">Phone: <a href="tel:+923005049603">0300-5049603</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REAL ESTATE -->
+  <section id="realestate">
+    <h3 class="section-title">Real Estate</h3>
+
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px;">
+      <button data-filter="all" class="small-btn secondary" onclick="filterType('all')">All</button>
+      <button data-filter="plot" class="small-btn secondary" onclick="filterType('plot')">Plots</button>
+      <button data-filter="apartment" class="small-btn secondary" onclick="filterType('apartment')">Apartments</button>
+      <button data-filter="shop" class="small-btn secondary" onclick="filterType('shop')">Shops</button>
+      <button data-filter="villa" class="small-btn secondary" onclick="filterType('villa')">Villas</button>
+      <button data-filter="farmhouse" class="small-btn secondary" onclick="filterType('farmhouse')">Farmhouses</button>
+    </div>
+
+    <div id="realGrid" class="grid" aria-live="polite"></div>
+    <div class="muted">Tip: Add a new property via <strong>Admin</strong> → Add Real Estate.</div>
+  </section>
+
+  <!-- AFFILIATE -->
+  <section id="affiliate">
+    <h3 class="section-title">Affiliate — Recommended Products</h3>
+    <div id="affGrid" class="grid"></div>
+    <div class="muted">Tip: Add affiliate products via Admin (image, description, affiliate link).</div>
+  </section>
+
+  <!-- LIFESTYLE -->
+  <section id="lifestyle">
+    <h3 class="section-title">Lifestyle — Nature, Food & Family</h3>
+    <div id="lifeGrid" class="grid"></div>
+    <div class="muted">Tip: Add lifestyle posts via Admin.</div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h3 class="section-title">Contact</h3>
+    <div style="display:flex;gap:18px;flex-wrap:wrap">
+      <div style="flex:1;min-width:280px">
+        <div class="card" style="padding:16px;">
+          <h4>Contact Raja Nadeem Akhter</h4>
+          <p class="muted">Email: <a href="mailto:rajanadeemakhter@gmail.com">rajanadeemakhter@gmail.com</a><br>WhatsApp / Phone: <a href="tel:+923005049603">0300-5049603</a></p>
+          <div style="margin-top:8px">
+            <a class="small-btn btn-wa" href="https://wa.me/923005049603" target="_blank">Message on WhatsApp</a>
+            <a class="small-btn btn-call" href="tel:+923005049603">Call Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div style="flex:1;min-width:280px">
+        <div class="card" style="padding:16px">
+          <h4>Send Quick Inquiry</h4>
+          <form id="quickForm">
+            <input id="q-name" placeholder="Your name" required style="padding:8px;border-radius:8px;border:1px solid #ddd;width:100%;margin-bottom:8px"/>
+            <input id="q-phone" placeholder="Phone / WhatsApp" required style="padding:8px;border-radius:8px;border:1px solid #ddd;width:100%;margin-bottom:8px"/>
+            <textarea id="q-msg" placeholder="Short message" rows="3" style="padding:8px;border-radius:8px;border:1px solid #ddd;width:100%"></textarea>
+            <div style="display:flex;gap:8px;margin-top:8px">
+              <button type="submit" class="small-btn success">Send (WhatsApp)</button>
+              <button id="sendEmail" type="button" class="small-btn secondary">Send (Email)</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:18px;text-align:center">
+      <div style="font-weight:700;color:var(--accent)">Follow Life on Social Media</div>
+      <div class="socials" role="navigation" aria-label="social links">
+        <a href="https://web.twitter.com/@rajasaib91" target="_blank">Twitter</a>
+        <a href="https://web.facebook.com/profile.php?id=61582826377619" target="_blank">Facebook</a>
+        <a href="http://www.pinterest.com/rajanadeemakhter" target="_blank">Pinterest</a>
+        <a href="https://www.tiktok.com/@rajanadeemakhter52?_t=ZS-90vhYZwTeP2&_r=1" target="_blank">TikTok</a>
+        <a href="https://www.instagram.com/akhterrajanadeem/?hl=en" target="_blank">Instagram</a>
+        <a href="https://www.linkedin.com/in/raja-nadeem-akhter-316853218/" target="_blank">LinkedIn</a>
+        <a href="https://www.youtube.com/@Life-qb4sw" target="_blank">YouTube</a>
+      </div>
+    </div>
+
+  </section>
+</main>
+
+<footer>
+  <div>© 2025 Life — Designed by Raja Nadeem Akhter</div>
+  <div class="muted" style="margin-top:6px">Mohallah Bandi, Kotnajibullah, Haripur • Islamabad</div>
+</footer>
+
+<!-- Sticky WhatsApp -->
+<div class="whatsapp-fixed" title="Message on WhatsApp" onclick="window.open('https://wa.me/923005049603','_blank')">💬</div>
+
+<!-- Admin Modal -->
+<div id="adminModal" class="modal" role="dialog" aria-modal="true">
+  <div class="sheet">
+    <h3>Admin Panel</h3>
+    <div id="adminArea">
+
+      <div style="display:flex;gap:8px;align-items:center;margin-bottom:10px">
+        <label style="font-weight:700">Mode:</label>
+        <select id="adminMode">
+          <option value="real">Add Real Estate</option>
+          <option value="aff">Add Affiliate</option>
+          <option value="life">Add Lifestyle</option>
+          <option value="export">Export / Import Data</option>
+        </select>
+        <button id="closeAdmin" style="margin-left:auto">Close</button>
+      </div>
+
+      <!-- Real Estate form -->
+      <div id="formReal" class="admin-form">
+        <div class="form-row">
+          <input id="r-title" placeholder="Property title (e.g. 'Residential Plot - 5 Marla')" />
+          <select id="r-type">
+            <option value="plot">Plot</option>
+            <option value="apartment">Apartment</option>
+            <option value="shop">Shop</option>
+            <option value="villa">Villa</option>
+            <option value="farmhouse">Farmhouse</option>
+          </select>
+        </div>
+        <div class="form-row" style="margin-top:8px">
+          <input id="r-area" placeholder="Area / Location (e.g. Islamabad)" />
+          <input id="r-size" placeholder="Size/price text (optional)" />
+        </div>
+        <div class="form-row" style="margin-top:8px">
+          <input id="r-image" placeholder="Image URL (or leave blank for placeholder)" />
+          <input id="r-contact" placeholder="Contact number (e.g. +923005049603)" />
+        </div>
+        <div style="margin-top:8px">
+          <textarea id="r-desc" rows="3" placeholder="Short description"></textarea>
+        </div>
+        <div class="row-actions">
+          <button class="success" onclick="addReal()">Add Property</button>
+          <button class="danger" onclick="clearRealForm()">Clear</button>
+        </div>
+      </div>
+
+      <!-- Affiliate form -->
+      <div id="formAff" class="admin-form" style="display:none">
+        <div class="form-row"><input id="a-title" placeholder="Product title" /></div>
+        <div class="form-row" style="margin-top:8px">
+          <input id="a-image" placeholder="Image URL" />
+          <input id="a-price" placeholder="Price text (e.g. Rs. 2,499)" />
+        </div>
+        <div style="margin-top:8px"><textarea id="a-desc" rows="3" placeholder="Short description"></textarea></div>
+        <div style="margin-top:8px"><input id="a-link" placeholder="Affiliate link (full URL)" /></div>
+        <div class="row-actions">
+          <button class="success" onclick="addAff()">Add Product</button>
+          <button class="danger" onclick="clearAffForm()">Clear</button>
+        </div>
+      </div>
+
+      <!-- Lifestyle form -->
+      <div id="formLife" class="admin-form" style="display:none">
+        <div class="form-row"><input id="l-title" placeholder="Post Title" /></div>
+        <div class="form-row" style="margin-top:8px"><input id="l-image" placeholder="Image URL" /></div>
+        <div style="margin-top:8px"><textarea id="l-excerpt" rows="4" placeholder="Short excerpt / content"></textarea></div>
+        <div class="row-actions">
+          <button class="success" onclick="addLife()">Add Post</button>
+          <button class="danger" onclick="clearLifeForm()">Clear</button>
+        </div>
+      </div>
+
+      <!-- Export / Import -->
+      <div id="formExport" style="display:none">
+        <div style="margin-bottom:8px"><button onclick="exportData()">Export Data (download JSON)</button></div>
+        <div style="margin:8px 0"><label>Paste JSON to import (will overwrite current):</label><textarea id="importBox" rows="6" style="width:100%;padding:8px;border:1px solid #ddd;border-radius:6px"></textarea></div>
+        <div class="row-actions"><button class="success" onclick="importData()">Import Data</button></div>
+      </div>
+
+      <hr style="margin:12px 0" />
+      <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+        <button onclick="clearAllData()" class="danger">Clear All Data (LOCAL ONLY)</button>
+        <div class="muted">Admin password: <strong>admin123</strong></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+const STORAGE_KEY = 'life_data_v1';
+const ADMIN_PWD = 'admin123';
+
+function uid(){ return 'id_' + Math.random().toString(36).slice(2,9); }
+function escapeHtml(s){ if(!s) return ''; return String(s).replace(/[&<>"']/g, m=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[m])); }
+function phoneToUrl(s){ if(!s) return ''; return String(s).replace(/\D/g,'').replace(/^0+/,'92'); }
+function phoneToTel(s){ if(!s) return ''; let t = String(s).replace(/\s+/g,''); if(t.startsWith('0')) t = '+92'+t.slice(1); if(!t.startsWith('+')) { if(t.length>9) t='+'+t; } return t; }
+
+/* sample data */
+const sampleData = {
+  real:[
+    {id:uid(),title:"Residential Plot - 5 Marla", type:"plot", area:"Prime City Area", size:"5 Marla", image:"https://via.placeholder.com/800x450?text=5+Marla+Plot", contact:"+923005049603", desc:"Good location, near main road."},
+    {id:uid(),title:"Apartment - 2 BHK", type:"apartment", area:"Central Urban Area", size:"2 BHK", image:"https://via.placeholder.com/800x450?text=2+BHK+Apartment", contact:"+923005049603", desc:"Modern apartment with security."},
+    {id:uid(),title:"Commercial Shop - 300 sqft", type:"shop", area:"Market Area", size:"300 sqft", image:"https://via.placeholder.com/800x450?text=Commercial+Shop", contact:"+923005049603", desc:"High foot traffic."}
+  ],
+  affiliate:[
+    {id:uid(),title:"Bedsure GentleSoft Blanket", image:"https://via.placeholder.com/600x350?text=Product", price:"Rs. 2,499", desc:"Soft & warm blanket (affiliate).", link:"https://amzn.to/4nz3Ei9"},
+    {id:uid(),title:"Roadbox UPF Shirt", image:"https://via.placeholder.com/600x350?text=Product+2", price:"Rs. 1,799", desc:"UPF 50+ outdoor shirt.", link:"https://amzn.to/4nz3Ei9"}
+  ],
+  lifestyle:[
+    {id:uid(),title:"Nature Walks", image:"https://via.placeholder.com/800x450?text=Nature", excerpt:"Sharing calm moments from nature walks."},
+    {id:uid(),title:"Simple Recipes", image:"https://via.placeholder.com/800x450?text=Food", excerpt:"Family-friendly recipes you will love."}
+  ]
+};
+
+function loadData(){
+  let raw = localStorage.getItem(STORAGE_KEY);
+  if(!raw){ localStorage.setItem(STORAGE_KEY, JSON.stringify(sampleData)); return JSON.parse(JSON.stringify(sampleData)); }
+  try{ return JSON.parse(raw); }catch(e){ localStorage.setItem(STORAGE_KEY, JSON.stringify(sampleData)); return JSON.parse(JSON.stringify(sampleData)); }
+}
+let DB = loadData();
+function saveDB(){ localStorage.setItem(STORAGE_KEY, JSON.stringify(DB)); }
+
+function renderReal(filter){
+  const grid = document.getElementById('realGrid'); grid.innerHTML = '';
+  const items = DB.real.filter(i => (filter==='all'||!filter) ? true : i.type===filter);
+  if(items.length===0){ grid.innerHTML = '<div class="muted">No listings yet.</div>'; return; }
+  items.forEach(it=>{
+    const el = document.createElement('div'); el.className='card';
+    el.innerHTML = `
+      <img src="${escapeHtml(it.image || 'https://via.placeholder.com/800x450?text=No+Image')}" alt="${escapeHtml(it.title)}">
+      <div class="body">
+        <h4>${escapeHtml(it.title)}</h4>
+        <p>${escapeHtml(it.desc || '')}</p>
+        <div style="display:flex;gap:8px;align-items:center" class="meta">
+          <div style="font-size:0.95rem;color:var(--muted)">${escapeHtml(it.area || '')} ${it.size? '• '+escapeHtml(it.size):''}</div>
+          <div style="margin-left:auto;display:flex;gap:8px">
+            <a class="small-btn btn-wa" href="https://wa.me/${phoneToUrl(it.contact)}" target="_blank">WhatsApp</a>
+            <a class="small-btn btn-call" href="tel:${phoneToTel(it.contact)}">Call</a>
+          </div>
+        </div>
+      </div>
+    `;
+    grid.appendChild(el);
+  });
+}
+
+function renderAff(){
+  const grid = document.getElementById('affGrid'); grid.innerHTML='';
+  if(DB.affiliate.length===0){ grid.innerHTML='<div class="muted">No affiliate products yet.</div>'; return;}
+  DB.affiliate.forEach(it=>{
+    const el = document.createElement('div'); el.className='card product';
+    el.innerHTML = `
+      <img src="${escapeHtml(it.image||'https://via.placeholder.com/800x450?text=Product')}" alt="${escapeHtml(it.title)}">
+      <div class="body">
+        <h4>${escapeHtml(it.title)}</h4>
+        <p>${escapeHtml(it.desc||'')}</p>
+        <div class="price">${escapeHtml(it.price||'')}</div>
+        <div style="margin-top:8px;display:flex;gap:8px">
+          <a class="small-btn secondary" href="${escapeHtml(it.link||'#')}" target="_blank">Buy / View</a>
+        </div>
+      </div>
+    `;
+    grid.appendChild(el);
+  });
+}
+
+function renderLife(){
+  const grid = document.getElementById('lifeGrid'); grid.innerHTML='';
+  if(DB.lifestyle.length===0){ grid.innerHTML='<div class="muted">No lifestyle posts yet.</div>'; return;}
+  DB.lifestyle.forEach(it=>{
+    const el = document.createElement('div'); el.className='card post';
+    el.innerHTML = `
+      <img src="${escapeHtml(it.image||'https://via.placeholder.com/800x450?text=Post')}" alt="${escapeHtml(it.title)}">
+      <div class="body">
+        <h4>${escapeHtml(it.title)}</h4>
+        <p class="excerpt">${escapeHtml(it.excerpt||'')}</p>
+      </div>
+    `;
+    grid.appendChild(el);
+  });
+}
+
+function filterType(type){ renderReal(type); }
+
+/* Quick forms */
+document.getElementById('quickForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const name = document.getElementById('q-name').value.trim();
+  const phone = document.getElementById('q-phone').value.trim();
+  const msg = document.getElementById('q-msg').value.trim();
+  if(!name||!phone){ alert('Please enter name and phone.'); return; }
+  const wa = `https://wa.me/${phoneToUrl(phone)}?text=${encodeURIComponent('Inquiry from '+name+' - '+msg)}`;
+  window.open(wa,'_blank');
+  this.reset();
+});
+document.getElementById('sendEmail').addEventListener('click', function(){
+  const name = document.getElementById('q-name').value.trim();
+  const phone = document.getElementById('q-phone').value.trim();
+  const msg = document.getElementById('q-msg').value.trim();
+  const mailto = `mailto:rajanadeemakhter@gmail.com?subject=${encodeURIComponent('Website inquiry from '+(name||'guest'))}&body=${encodeURIComponent('Name: '+name+'%0APhone: '+phone+'%0A%0A'+msg)}`;
+  window.location.href = mailto;
+});
+
+/* Contact form in header area (if present) */
+document.getElementById('contactForm')?.addEventListener('submit', e=>{
+  e.preventDefault();
+  const name = document.getElementById('name').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const message = document.getElementById('message').value.trim();
+  const waLink = `https://wa.me/${phoneToUrl(phone)}?text=${encodeURIComponent('Hello, this is '+name+' - '+message)}`;
+  window.open(waLink,'_blank');
+  e.target.reset();
+});
+
+/* initial render */
+renderReal('all'); renderAff(); renderLife();
+
+/* Admin modal */
+const adminModal = document.getElementById('adminModal');
+const openAdminBtn = document.getElementById('openAdmin');
+const closeAdminBtn = document.getElementById('closeAdmin');
+const adminMode = document.getElementById('adminMode');
+
+openAdminBtn.addEventListener('click', ()=> {
+  const pwd = prompt('Enter admin password:');
+  if(pwd!==ADMIN_PWD){ alert('Wrong password'); return; }
+  adminModal.style.display='flex';
+  showAdminForm();
+});
+closeAdminBtn.addEventListener('click', ()=> adminModal.style.display='none');
+adminMode.addEventListener('change', showAdminForm);
+function showAdminForm(){
+  const m = adminMode.value;
+  document.getElementById('formReal').style.display = m==='real' ? 'block' : 'none';
+  document.getElementById('formAff').style.display = m==='aff' ? 'block' : 'none';
+  document.getElementById('formLife').style.display = m==='life' ? 'block' : 'none';
+  document.getElementById('formExport').style.display = m==='export' ? 'block' : 'none';
+}
+
+/* Add functions */
+function addReal(){
+  const title=document.getElementById('r-title').value.trim();
+  const type=document.getElementById('r-type').value;
+  const area=document.getElementById('r-area').value.trim();
+  const size=document.getElementById('r-size').value.trim();
+  const image=document.getElementById('r-image').value.trim() || 'https://via.placeholder.com/800x450?text=Property';
+  const contact=document.getElementById('r-contact').value.trim() || '+923005049603';
+  const desc=document.getElementById('r-desc').value.trim();
+  if(!title){ alert('Enter title'); return; }
+  const item = {id:uid(),title,type,area,size,image,contact,desc};
+  DB.real.unshift(item);
+  saveDB(); renderReal('all'); alert('Property added (local).'); clearRealForm();
+}
+function addAff(){
+  const title=document.getElementById('a-title').value.trim();
+  const image=document.getElementById('a-image').value.trim() || 'https://via.placeholder.com/800x450?text=Product';
+  const price=document.getElementById('a-price').value.trim();
+  const desc=document.getElementById('a-desc').value.trim();
+  const link=document.getElementById('a-link').value.trim() || '#';
+  if(!title){ alert('Enter product title'); return; }
+  DB.affiliate.unshift({id:uid(),title,image,price,desc,link});
+  saveDB(); renderAff(); alert('Affiliate product added (local).'); clearAffForm();
+}
+function addLife(){
+  const title=document.getElementById('l-title').value.trim();
+  const image=document.getElementById('l-image').value.trim() || 'https://via.placeholder.com/800x450?text=Post';
+  const excerpt=document.getElementById('l-excerpt').value.trim();
+  if(!title){ alert('Enter post title'); return; }
+  DB.lifestyle.unshift({id:uid(),title,image,excerpt});
+  saveDB(); renderLife(); alert('Lifestyle post added (local).'); clearLifeForm();
+}
+
+/* clear helpers */
+function clearRealForm(){ document.getElementById('r-title').value=''; document.getElementById('r-area').value=''; document.getElementById('r-size').value=''; document.getElementById('r-image').value=''; document.getElementById('r-contact').value=''; document.getElementById('r-desc').value=''; }
+function clearAffForm(){ document.getElementById('a-title').value=''; document.getElementById('a-image').value=''; document.getElementById('a-price').value=''; document.getElementById('a-desc').value=''; document.getElementById('a-link').value=''; }
+function clearLifeForm(){ document.getElementById('l-title').value=''; document.getElementById('l-image').value=''; document.getElementById('l-excerpt').value=''; }
+
+/* export / import */
+function exportData(){
+  const dataStr = JSON.stringify(DB, null, 2);
+  const blob = new Blob([dataStr], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a'); a.href=url; a.download='life_data.json'; a.click(); URL.revokeObjectURL(url);
+}
+function importData(){
+  try{
+    const raw = document.getElementById('importBox').value.trim();
+    if(!raw){ alert('Paste JSON into box'); return; }
+    const parsed = JSON.parse(raw);
+    DB = parsed;
+    saveDB(); renderReal('all'); renderAff(); renderLife(); alert('Data imported and saved locally.');
+  }catch(e){ alert('Invalid JSON'); }
+}
+
+function clearAllData(){
+  if(!confirm('This will clear ALL local data (listings, products, posts). Continue?')) return;
+  localStorage.removeItem(STORAGE_KEY);
+  DB = loadData();
+  renderReal('all'); renderAff(); renderLife();
+  alert('All local data cleared (reverted to sample).');
+}
+
+/* initial UI */
+renderReal('all'); renderAff(); renderLife();
+</script>
+</body>
+</html>

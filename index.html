@@ -67,25 +67,35 @@
 <body>
 
 <header>
-  <div class="topbar">
-    <div class="brand">
-      <div class="logo">Life</div>
-      <div>
-        <h1>Life — Designed by Raja Nadeem Akhter</h1>
-        <div style="font-size:12px;color:#405a5a">Real Estate • Affiliate • Lifestyle</div>
+  <div class="topbar" style="display:flex; justify-content:space-between; align-items:center; padding:10px 20px; background-color:#f5f5f5; box-shadow:0 2px 5px rgba(0,0,0,0.1);">
+
+    <!-- Brand / Logo Section -->
+    <div class="brand" style="display:flex; align-items:center; gap:15px;">
+      <!-- Profile Picture -->
+      <img src="https://github.com/rajanadeemakhter.png" 
+           alt="Raja Nadeem Akhter" 
+           style="width:50px; height:50px; border-radius:50%; display:block;">
+
+      <!-- Logo and Text -->
+      <div style="display:flex; flex-direction:column;">
+        <div class="logo" style="font-size:24px; font-weight:bold; color:#333;">Life</div>
+        <h1 style="margin:0; font-size:16px; color:#405a5a;">Life — Designed by Raja Nadeem Akhter</h1>
+        <div style="font-size:12px; color:#405a5a;">Real Estate • Affiliate • Lifestyle</div>
       </div>
     </div>
 
-    <div style="display:flex;align-items:center;gap:12px">
-      <nav>
-        <a href="#realestate">Real Estate</a>
-        <a href="#affiliate">Affiliate</a>
-        <a href="#lifestyle">Lifestyle</a>
-        <a href="#contact">Contact</a>
+    <!-- Navigation Section -->
+    <div style="display:flex; align-items:center; gap:12px;">
+      <nav style="display:flex; gap:10px;">
+        <a href="#realestate" style="text-decoration:none; color:#333;">Real Estate</a>
+        <a href="#affiliate" style="text-decoration:none; color:#333;">Affiliate</a>
+        <a href="#lifestyle" style="text-decoration:none; color:#333;">Lifestyle</a>
+        <a href="#contact" style="text-decoration:none; color:#333;">Contact</a>
       </nav>
 
       <button id="openAdmin" class="admin-open">Admin</button>
     </div>
+
   </div>
 </header>
 

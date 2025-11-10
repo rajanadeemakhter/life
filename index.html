@@ -1,235 +1,174 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<title>Life — Designed by Raja Nadeem Akhter</title>
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<meta name="description" content="Life — Real estate listings, recommended affiliate products, and lifestyle posts by Raja Nadeem Akhter" />
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --green: #117a3b;
-  --gold: #c9a15a;
-  --accent:#004080;
-  --muted:#666;
-  --bg:#ffffff;
-  --card:#fff;
-}
-*{box-sizing:border-box;}
-body{margin:0;font-family:Roboto,Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#fbfbfb,#ffffff);color:#222;line-height:1.5;overflow-x:hidden;}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Life — Designed by Raja Nadeem Akhter</title>
 
-/* Header */
-header{background:linear-gradient(135deg,var(--gold),#fff);color:#083344;padding:18px 16px;position:sticky;top:0;z-index:60;border-bottom:1px solid rgba(0,0,0,0.04);}
-.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:1200px;margin:0 auto;}
-.brand{display:flex;align-items:center;gap:12px;}
-.brand img.logo{width:56px;height:56px;border-radius:50%;animation:spin 10s linear infinite;}
-.brand img.photo{width:56px;height:56px;border-radius:50%;object-fit:cover;border:2px solid var(--green);}
-.brand h1{font-size:20px;margin:0;color:#083344;}
-nav a{color:#083344;text-decoration:none;margin-left:12px;font-weight:600;}
-nav a:hover{opacity:.8;}
+  <style>
+    /* ====== GLOBAL STYLE ====== */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fafafa;
+      color: #222;
+      text-align: center;
+    }
 
-/* Animations */
-@keyframes spin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
-.fade-in{opacity:0; animation:fadeIn 1.5s forwards;}
-@keyframes fadeIn{to{opacity:1;}}
+    header {
+      background: #222;
+      color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
 
-/* Main Content */
-main{max-width:1200px;margin:28px auto;padding:0 16px;}
-.hero{background:#fff;border-radius:12px;color:#083344;padding:32px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;box-shadow:0 10px 30px rgba(15,40,20,0.04);border:1px solid rgba(201,161,90,0.12);}
-.hero .left{max-width:760px;opacity:0;animation:fadeIn 1.5s forwards 0.5s;}
-.hero h2{font-size:28px;margin:0 0 8px;color:var(--green);}
-.hero p{margin:0 0 12px;color:#444;}
-.cta{display:flex;gap:10px;}
-.btn{background:var(--green);color:#fff;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:700;box-shadow:0 6px 16px rgba(17,122,59,0.12);transition:0.3s;}
-.btn:hover{transform:scale(1.05);}
-.btn.secondary{background:transparent;color:var(--accent);border:1px solid rgba(0,64,128,0.06);}
-.btn.secondary:hover{background:var(--accent);color:#fff;transform:scale(1.05);}
+    header img {
+      width: 120px;
+      height: auto;
+      border-radius: 10px;
+    }
 
-/* Sections */
-section{margin-top:28px;}
-h3.section-title{color:var(--accent);margin-bottom:12px;text-align:left;}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;}
-.card{background:var(--card);border-radius:10px;overflow:hidden;box-shadow:0 6px 18px rgba(20,30,50,0.04);display:flex;flex-direction:column;border:1px solid rgba(0,0,0,0.03);transition:0.3s;}
-.card img{width:100%;height:180px;object-fit:cover;transition:0.3s;}
-.card .body{padding:14px;flex:1;display:flex;flex-direction:column;}
-.card h4{margin:0 0 8px;color:var(--green);}
-.card p{margin:0 0 12px;color:var(--muted);font-size:0.95rem;}
-.card:hover{transform:translateY(-6px);box-shadow:0 12px 28px rgba(17,40,80,0.12);}
-.card:hover img{transform:scale(1.05);}
-.meta{margin-top:auto;display:flex;gap:8px;align-items:center;}
-.small-btn{padding:8px 10px;border-radius:8px;text-decoration:none;font-weight:600;border:none;cursor:pointer;}
-.btn-call{background:#004080;color:#fff;}
-.btn-wa{background:#25D366;color:#fff;}
-.small-btn.secondary{background:transparent;color:var(--accent);border:1px solid rgba(0,0,0,0.06);}
-.product .price{color:var(--green);font-weight:700;margin-top:6px;}
-.post .excerpt{color:var(--muted);font-size:0.95rem;}
-.admin-open{background:transparent;color:var(--accent);padding:8px 12px;border-radius:8px;border:1px solid rgba(0,0,0,0.06);cursor:pointer;transition:0.3s;}
-.admin-open:hover{background:var(--accent);color:#fff;transform:scale(1.05);}
+    nav {
+      margin-top: 15px;
+    }
 
-/* Footer */
-footer{margin-top:36px;padding:18px 16px;text-align:center;color:#555;background:linear-gradient(180deg,#fff,#fbfbfb);border-top:1px solid rgba(0,0,0,0.04);}
-.whatsapp-fixed{position:fixed;right:18px;bottom:18px;background:#25D366;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:26px;box-shadow:0 8px 20px rgba(0,0,0,0.18);z-index:999;cursor:pointer;}
-.socials{display:flex;gap:8px;justify-content:center;margin-top:8px;}
-.socials a{color:var(--accent);text-decoration:none;font-weight:700;padding:6px 8px;border-radius:6px;border:1px solid rgba(0,0,0,0.04);background:rgba(201,161,90,0.04);}
-.muted{color:#666;font-size:0.95rem;margin-top:8px;}
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
 
-/* Admin modal */
-.modal{position:fixed;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.35);display:none;align-items:center;justify-content:center;padding:20px;z-index:120;}
-.sheet{background:#fff;border-radius:10px;max-width:980px;width:100%;padding:18px;box-shadow:0 12px 40px rgba(0,0,0,0.12);}
-.form-row{display:flex;gap:8px;flex-wrap:wrap;}
-.form-row input,.form-row select,.form-row textarea{flex:1;padding:8px;border-radius:8px;border:1px solid #ddd;}
-.row-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:10px;}
-.danger{background:#e74c3c;color:#fff;padding:8px 12px;border-radius:8px;border:none;transition:0.3s;}
-.danger:hover{opacity:0.9;}
-.success{background:var(--green);color:#fff;padding:8px 12px;border-radius:8px;border:none;transition:0.3s;}
-.success:hover{opacity:0.9;}
+    nav a:hover {
+      color: #00bfff;
+    }
 
-@media(max-width:880px){.hero{flex-direction:column;align-items:flex-start}.hero h2{font-size:22px}}
-@media(max-width:768px){
-  .topbar{flex-direction:column;align-items:flex-start;gap:10px;}
-  .brand{flex-direction:row;flex-wrap:wrap;align-items:center;gap:10px;}
-  nav{flex-wrap:wrap;gap:8px;}
-  .admin-open{margin-left:0;margin-top:5px;}
-  .brand img{width:50px !important;height:50px !important;}
-}
-</style>
+    main {
+      padding: 30px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    /* ====== AFFILIATE DASHBOARD ====== */
+    .dashboard {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+
+    .dashboard h2 {
+      color: #333;
+    }
+
+    canvas {
+      margin-top: 20px;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    /* ====== FOOTER ====== */
+    footer {
+      background: #111;
+      color: white;
+      padding: 20px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    footer a {
+      color: #00bfff;
+      text-decoration: none;
+    }
+
+    /* ====== RESPONSIVE ====== */
+    @media (max-width: 768px) {
+      header img {
+        width: 80px;
+      }
+
+      nav a {
+        display: block;
+        margin: 8px 0;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<header>
-  <div class="topbar">
-    <div class="brand">
-      <img src="logo.png" alt="Life Logo" class="logo">
-      <img src="photo.jpg" alt="Raja Nadeem Akhter" class="photo">
-      <h1>Life</h1>
-    </div>
+  <!-- HEADER -->
+  <header>
+    <img src="your-logo.png" alt="Life Logo" />
     <nav>
-      <a href="#realestate">Real Estate</a>
-      <a href="#affiliate">Affiliate</a>
-      <a href="#lifestyle">Lifestyle</a>
-      <a href="#contact">Contact</a>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Affiliate</a>
+      <a href="#">Contact</a>
     </nav>
-  </div>
-</header>
+  </header>
 
-<main>
-  <!-- Hero -->
-  <section class="hero" aria-label="intro">
-    <div class="left fade-in">
-      <h2>Welcome to Life</h2>
-      <p>Explore curated real estate listings, recommended products, and lifestyle posts by Raja Nadeem Akhter. Your journey to smart investments and elegant lifestyle starts here.</p>
-      <div class="cta">
-        <a class="btn" href="#realestate">Browse Properties</a>
-        <a class="btn secondary" href="#affiliate">Shop Products</a>
-      </div>
-    </div>
-    <div class="right" style="min-width:260px">
-      <div class="card" style="padding:14px;display:flex;flex-direction:column;gap:8px">
-        <div style="font-weight:700;color:var(--accent)">Quick Contact</div>
-        <div style="color:var(--muted)">WhatsApp: <a href="https://wa.me/923005049603" target="_blank">Message</a></div>
-        <div style="color:var(--muted)">Phone: <a href="tel:+923005049603">0300-5049603</a></div>
-      </div>
-    </div>
+  <!-- MAIN CONTENT -->
+  <main>
+    <h1>Welcome to Life</h1>
+    <p>Experience nature, lifestyle, food, and family-friendly content — powered by Raja Nadeem Akhter.</p>
+  </main>
+
+  <!-- AFFILIATE DASHBOARD -->
+  <section class="dashboard">
+    <h2>Affiliate Performance Dashboard</h2>
+    <p>Monitor clicks and estimated monthly earnings from your affiliate links.</p>
+    <canvas id="salesChart"></canvas>
+    <div id="revenueDisplay"></div>
   </section>
 
-  <!-- Real Estate Section -->
-  <section id="realestate">
-    <h3 class="section-title">Real Estate</h3>
-    <div class="grid" id="realestate-list"></div>
-  </section>
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Life — All Rights Reserved<br>
+    Designed by <strong>Raja Nadeem Akhter</strong><br>
+    📧 <a href="mailto:rajanadeemakhter@gmail.com">rajanadeemakhter@gmail.com</a></p>
+  </footer>
 
-  <!-- Affiliate Section -->
-  <section id="affiliate">
-    <h3 class="section-title">Affiliate Products</h3>
-    <div class="grid" id="affiliate-list"></div>
-  </section>
+  <!-- SCRIPT -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    // === SIMULATED DATA ===
+    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const clicks = [45, 78, 120, 90, 110, 130, 170, 210, 230, 260, 280, 300];
+    const sales = clicks.map(c => c * 0.4); // conversion rate estimate
+    const revenue = sales.map(s => s * 5); // assume $5 per sale
 
-  <!-- Lifestyle Section -->
-  <section id="lifestyle">
-    <h3 class="section-title">Lifestyle Posts</h3>
-    <div class="grid" id="lifestyle-list"></div>
-  </section>
+    const ctx = document.getElementById('salesChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: months,
+        datasets: [{
+          label: 'Estimated Monthly Earnings ($)',
+          data: revenue,
+          backgroundColor: 'rgba(0, 191, 255, 0.6)',
+          borderColor: '#00bfff',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: { y: { beginAtZero: true } },
+        plugins: { legend: { display: false } }
+      }
+    });
 
-  <!-- Admin Panel Button -->
-  <button class="admin-open" onclick="openAdmin()">Open Admin Panel</button>
-</main>
-
-<footer>
-  <div>© 2025 Life — Designed by Raja Nadeem Akhter</div>
-  <div class="muted">Mohallah Bandi, Kotnajibullah, Haripur • Islamabad</div>
-  <div>📧 rajanadeemakhter@signaturemarketing.com.pk</div>
-</footer>
-
-<div class="whatsapp-fixed" title="Message on WhatsApp" onclick="window.open('https://wa.me/923005049603','_blank')">💬</div>
-
-<!-- Admin Modal -->
-<div class="modal" id="adminModal">
-  <div class="sheet">
-    <h3>Admin Panel</h3>
-    <div class="form-row">
-      <input type="text" id="itemTitle" placeholder="Title">
-      <input type="text" id="itemImage" placeholder="Image URL">
-      <input type="text" id="itemDesc" placeholder="Description">
-      <input type="text" id="itemPrice" placeholder="Price / Link">
-      <select id="itemSection">
-        <option value="realestate">Real Estate</option>
-        <option value="affiliate">Affiliate</option>
-        <option value="lifestyle">Lifestyle</option>
-      </select>
-    </div>
-    <div class="row-actions">
-      <button class="success" onclick="addItem()">Add</button>
-      <button class="danger" onclick="closeAdmin()">Close</button>
-    </div>
-  </div>
-</div>
-
-<script>
-// Sample Data
-let realestate = [
-  {title:"5 Marla Plot",desc:"Prime location Nowshera",img:"https://via.placeholder.com/300x180",price:"PKR 2,500,000"},
-  {title:"10 Marla Plot",desc:"Best for family housing",img:"https://via.placeholder.com/300x180",price:"PKR 5,500,000"}
-];
-let affiliate = [
-  {title:"Wmcaps Winter Beanie",desc:"Warm Fleece Lined Knit Hat",img:"https://via.placeholder.com/300x180",price:"$9.99 - <a href='https://amzn.to/49IPLup' target='_blank'>Buy Now</a>"}
-];
-let lifestyle = [
-  {title:"Nature Walk",desc:"Explore peaceful landscapes",img:"https://via.placeholder.com/300x180"}
-];
-
-// Render Lists
-function renderList(section, containerId){
-  let container=document.getElementById(containerId); container.innerHTML="";
-  section.forEach(item=>{
-    let div=document.createElement("div"); div.className="card";
-    div.innerHTML=`<img src="${item.img}" alt="${item.title}"><div class="body"><h4>${item.title}</h4><p>${item.desc}</p>${item.price?'<div class="price">'+item.price+'</div>':''}</div>`;
-    container.appendChild(div);
-  });
-}
-renderList(realestate,"realestate-list");
-renderList(affiliate,"affiliate-list");
-renderList(lifestyle,"lifestyle-list");
-
-// Admin Panel
-function openAdmin(){document.getElementById("adminModal").style.display="flex";}
-function closeAdmin(){document.getElementById("adminModal").style.display="none";}
-function addItem(){
-  let title=document.getElementById("itemTitle").value;
-  let img=document.getElementById("itemImage").value;
-  let desc=document.getElementById("itemDesc").value;
-  let price=document.getElementById("itemPrice").value;
-  let section=document.getElementById("itemSection").value;
-  if(title && img && desc){
-    let obj={title,desc,img,price};
-    if(section==="realestate") realestate.push(obj), renderList(realestate,"realestate-list");
-    else if(section==="affiliate") affiliate.push(obj), renderList(affiliate,"affiliate-list");
-    else if(section==="lifestyle") lifestyle.push(obj), renderList(lifestyle,"lifestyle-list");
-    document.getElementById("itemTitle").value="";
-    document.getElementById("itemImage").value="";
-    document.getElementById("itemDesc").value="";
-    document.getElementById("itemPrice").value="";
-  }else alert("Please fill all fields");
-}
-</script>
+    // Display estimated annual revenue
+    const totalRevenue = revenue.reduce((a,b)=>a+b,0);
+    document.getElementById('revenueDisplay').innerHTML = 
+      `<h3>Total Estimated Annual Earnings: $${totalRevenue.toFixed(2)}</h3>`;
+  </script>
 </body>
 </html>

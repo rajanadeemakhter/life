@@ -1,174 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Life — Designed by Raja Nadeem Akhter</title>
-
-  <style>
-    /* ====== GLOBAL STYLE ====== */
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fafafa;
-      color: #222;
-      text-align: center;
-    }
-
-    header {
-      background: #222;
-      color: white;
-      padding: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-    }
-
-    header img {
-      width: 120px;
-      height: auto;
-      border-radius: 10px;
-    }
-
-    nav {
-      margin-top: 15px;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      color: #00bfff;
-    }
-
-    main {
-      padding: 30px;
-      animation: fadeIn 1.5s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-
-    /* ====== AFFILIATE DASHBOARD ====== */
-    .dashboard {
-      max-width: 800px;
-      margin: 40px auto;
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
-    }
-
-    .dashboard h2 {
-      color: #333;
-    }
-
-    canvas {
-      margin-top: 20px;
-      width: 100%;
-      max-width: 600px;
-    }
-
-    /* ====== FOOTER ====== */
-    footer {
-      background: #111;
-      color: white;
-      padding: 20px;
-      font-size: 14px;
-      line-height: 1.5;
-    }
-
-    footer a {
-      color: #00bfff;
-      text-decoration: none;
-    }
-
-    /* ====== RESPONSIVE ====== */
-    @media (max-width: 768px) {
-      header img {
-        width: 80px;
-      }
-
-      nav a {
-        display: block;
-        margin: 8px 0;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Life — Designed by Raja Nadeem Akhter</title>
+<style>
+body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f9f9f9; color:#333; }
+header { background:#2c3e50; color:white; padding:10px 20px; display:flex; justify-content:space-between; align-items:center; }
+header h1 { margin:0; }
+nav a { color:white; text-decoration:none; margin-left:15px; }
+.logo-profile { display:flex; align-items:center; }
+.profile-img { width:40px; height:40px; border-radius:50%; margin-left:10px; }
+main { padding:20px; }
+section { margin-bottom:40px; }
+h2 { color:#2c3e50; }
+.content-cards { display:flex; gap:20px; flex-wrap:wrap; }
+.card { background:white; padding:10px; border-radius:8px; box-shadow:0 0 6px rgba(0,0,0,0.1); width:200px; text-align:center; }
+.card img { width:100%; border-radius:8px; }
+.btn, .affiliate-btn { display:inline-block; margin-top:10px; padding:8px 12px; background:#e67e22; color:white; border-radius:4px; text-decoration:none; }
+footer { text-align:center; padding:15px; background:#2c3e50; color:white; margin-top:30px; }
+#admin-section { display:none; background:#f1f1f1; padding:20px; border-radius:8px; }
+#realestate, #affiliate, #lifestyle { background:white; padding:15px; border-radius:8px; box-shadow:0 0 6px rgba(0,0,0,0.1); }
+input[type=password] { padding:6px; margin-right:5px; border-radius:4px; border:1px solid #ccc; }
+button { padding:6px 10px; border:none; border-radius:4px; background:#e67e22; color:white; cursor:pointer; }
+</style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <img src="your-logo.png" alt="Life Logo" />
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Affiliate</a>
-      <a href="#">Contact</a>
-    </nav>
-  </header>
+<header>
+<div class="logo-profile">
+<h1>Life</h1>
+<img src="https://via.placeholder.com/40" alt="Raja Nadeem Akhter" class="profile-img">
+</div>
+<nav>
+<a href="#realestate">Real Estate</a>
+<a href="#affiliate">Affiliate</a>
+<a href="#lifestyle">Lifestyle</a>
+<a href="#admin-section" onclick="promptAdmin()">Admin</a>
+</nav>
+</header>
 
-  <!-- MAIN CONTENT -->
-  <main>
-    <h1>Welcome to Life</h1>
-    <p>Experience nature, lifestyle, food, and family-friendly content — powered by Raja Nadeem Akhter.</p>
-  </main>
+<main>
+<!-- Real Estate Section -->
+<section id="realestate">
+<h2>Real Estate Projects</h2>
+<div class="content-cards">
+<div class="card">
+<img src="https://via.placeholder.com/200x120" alt="Overseas Enclave">
+<p>Overseas Enclave – 5 Marla, 7 Marla, 10 Marla & 1 Kanal plots.</p>
+<p>Located in A.S.C Cooperative Housing Society, Phase 2, Nowshera.</p>
+<a href="#" class="btn">Learn More</a>
+</div>
+</div>
+</section>
 
-  <!-- AFFILIATE DASHBOARD -->
-  <section class="dashboard">
-    <h2>Affiliate Performance Dashboard</h2>
-    <p>Monitor clicks and estimated monthly earnings from your affiliate links.</p>
-    <canvas id="salesChart"></canvas>
-    <div id="revenueDisplay"></div>
-  </section>
+<!-- Affiliate Section -->
+<section id="affiliate">
+<h2>Recommended Products</h2>
+<div class="content-cards">
+<div class="card">
+<p>Wmcaps Winter Fleece Line Beanie for Men & Women</p>
+<a href="https://amzn.to/4qQyEgu" target="_blank" class="affiliate-btn">Buy Now</a>
+</div>
+<div class="card">
+<p>Wmcaps Winter Beanie Soft Warm Knit Hat</p>
+<a href="https://amzn.to/49IPLup" target="_blank" class="affiliate-btn">Buy Now</a>
+</div>
+</div>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 Life — All Rights Reserved<br>
-    Designed by <strong>Raja Nadeem Akhter</strong><br>
-    📧 <a href="mailto:rajanadeemakhter@gmail.com">rajanadeemakhter@gmail.com</a></p>
-  </footer>
+<!-- Lifestyle Section -->
+<section id="lifestyle">
+<h2>Lifestyle & YouTube</h2>
+<p>Check out my videos on lifestyle, nature, and family-friendly content.</p>
+<a href="https://www.youtube.com/@rajanadeemakhter52" target="_blank" class="btn">Visit YouTube</a>
+<div class="content-cards">
+<div class="card">
+<img src="https://via.placeholder.com/200x120" alt="Nature">
+<p>Exploring the beauty of nature.</p>
+</div>
+<div class="card">
+<img src="https://via.placeholder.com/200x120" alt="Family Life">
+<p>Family-friendly lifestyle tips.</p>
+</div>
+</div>
+</section>
 
-  <!-- SCRIPT -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script>
-    // === SIMULATED DATA ===
-    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-    const clicks = [45, 78, 120, 90, 110, 130, 170, 210, 230, 260, 280, 300];
-    const sales = clicks.map(c => c * 0.4); // conversion rate estimate
-    const revenue = sales.map(s => s * 5); // assume $5 per sale
+<!-- Admin Section -->
+<section id="admin-section">
+<h2>Admin Dashboard</h2>
+<p>Total Affiliate Clicks: <span id="click-count">0</span></p>
+<button id="simulate-click">Simulate Click (Test)</button>
+<h3>Notes:</h3>
+<p>All user interactions are safe. No auto-click scripts included.</p>
+</section>
 
-    const ctx = document.getElementById('salesChart').getContext('2d');
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: months,
-        datasets: [{
-          label: 'Estimated Monthly Earnings ($)',
-          data: revenue,
-          backgroundColor: 'rgba(0, 191, 255, 0.6)',
-          borderColor: '#00bfff',
-          borderWidth: 1
-        }]
-      },
-      options: {
-        scales: { y: { beginAtZero: true } },
-        plugins: { legend: { display: false } }
-      }
-    });
+</main>
 
-    // Display estimated annual revenue
-    const totalRevenue = revenue.reduce((a,b)=>a+b,0);
-    document.getElementById('revenueDisplay').innerHTML = 
-      `<h3>Total Estimated Annual Earnings: $${totalRevenue.toFixed(2)}</h3>`;
-  </script>
+<footer>
+<p>© 2025 Life — Designed by Raja Nadeem Akhter</p>
+</footer>
+
+<script>
+// Admin access
+function promptAdmin() {
+const pwd = prompt("Enter Admin Password:");
+if (pwd === "YourSecurePassword123") { // CHANGE to your actual password
+document.getElementById('admin-section').style.display = 'block';
+document.getElementById('admin-section').scrollIntoView({behavior: 'smooth'});
+} else {
+alert("Incorrect password!");
+}
+}
+
+// Affiliate click simulation
+let clickCount = 0;
+const clickCountSpan = document.getElementById('click-count');
+const simulateClickBtn = document.getElementById('simulate-click');
+if (simulateClickBtn) {
+simulateClickBtn.addEventListener('click', () => {
+clickCount++;
+clickCountSpan.textContent = clickCount;
+});
+}
+</script>
+
 </body>
 </html>

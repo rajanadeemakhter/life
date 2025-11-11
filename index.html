@@ -1,129 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Life — Designed by Raja Nadeem Akhter</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Welcome to Life — Explore Real Estate, Lifestyle & Deals</title>
 <style>
-body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f9f9f9; color:#333; }
-header { background:#2c3e50; color:white; padding:10px 20px; display:flex; justify-content:space-between; align-items:center; }
-header h1 { margin:0; }
-nav a { color:white; text-decoration:none; margin-left:15px; }
-.logo-profile { display:flex; align-items:center; }
-.profile-img { width:40px; height:40px; border-radius:50%; margin-left:10px; }
-main { padding:20px; }
-section { margin-bottom:40px; }
-h2 { color:#2c3e50; }
-.content-cards { display:flex; gap:20px; flex-wrap:wrap; }
-.card { background:white; padding:10px; border-radius:8px; box-shadow:0 0 6px rgba(0,0,0,0.1); width:200px; text-align:center; }
-.card img { width:100%; border-radius:8px; }
-.btn, .affiliate-btn { display:inline-block; margin-top:10px; padding:8px 12px; background:#e67e22; color:white; border-radius:4px; text-decoration:none; }
-footer { text-align:center; padding:15px; background:#2c3e50; color:white; margin-top:30px; }
-#admin-section { display:none; background:#f1f1f1; padding:20px; border-radius:8px; }
-#realestate, #affiliate, #lifestyle { background:white; padding:15px; border-radius:8px; box-shadow:0 0 6px rgba(0,0,0,0.1); }
-input[type=password] { padding:6px; margin-right:5px; border-radius:4px; border:1px solid #ccc; }
-button { padding:6px 10px; border:none; border-radius:4px; background:#e67e22; color:white; cursor:pointer; }
+  :root{--accent:#e67e22;--bg:#f8f9fb;--card:#ffffff;--text:#222;}
+  *{box-sizing:border-box}body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);margin:0;line-height:1.5}
+  header{background:#213748;color:#fff;padding:14px 18px;position:sticky;top:0;z-index:50}
+  .container{max-width:1000px;margin:0 auto;padding:18px}
+  .brand{display:flex;align-items:center;gap:12px}.brand h1{margin:0;font-size:20px}
+  .nav{display:flex;gap:14px;margin-left:auto}.nav a{color:#fff;text-decoration:none;padding:6px 8px;border-radius:6px;font-weight:600}.nav a:hover{background:rgba(255,255,255,0.06)}
+  main{padding:22px 0}.hero{background:linear-gradient(90deg,rgba(33,55,72,0.06),rgba(230,126,34,0.02));padding:24px;border-radius:10px;margin-bottom:20px}.hero h2{margin:0 0 8px 0;color:#13202b}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}.card{background:var(--card);padding:14px;border-radius:10px;box-shadow:0 6px 18px rgba(19,32,43,0.06)}.card img{width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:10px}
+  .btn{display:inline-block;background:var(--accent);color:#fff;padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:600}section h3{margin-top:0}.small{font-size:14px;color:#555}
+  footer{background:#213748;color:#fff;padding:14px 18px;margin-top:28px}.contact-list{list-style:none;padding:0;margin:0}.contact-list li{margin-bottom:6px}
+  @media (max-width:600px){.nav{display:none}.brand{justify-content:space-between;width:100%}}
+  .pill{display:inline-block;background:#eef6f9;border-radius:999px;padding:6px 10px;font-size:13px;color:#136270}.muted{color:#6b7785}
 </style>
 </head>
 <body>
-
 <header>
-<div class="logo-profile">
-<h1>Life</h1>
-<img src="https://via.placeholder.com/40" alt="Raja Nadeem Akhter" class="profile-img">
-</div>
-<nav>
-<a href="#realestate">Real Estate</a>
-<a href="#affiliate">Affiliate</a>
-<a href="#lifestyle">Lifestyle</a>
-<a href="#admin-section" onclick="promptAdmin()">Admin</a>
-</nav>
+  <div class="container" style="display:flex;align-items:center">
+    <div class="brand" style="flex:1">
+      <img src="https://via.placeholder.com/44" alt="profile" style="border-radius:50%;width:44px;height:44px;object-fit:cover">
+      <div>
+        <h1 style="font-size:18px;margin:0">Welcome to Life</h1>
+        <div class="small">By Raja Nadeem Akhter</div>
+      </div>
+    </div>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#realestate">Real Estate</a>
+      <a href="#affiliate">Affiliate</a>
+      <a href="#lifestyle">Lifestyle</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
 </header>
-
-<main>
-<!-- Real Estate Section -->
-<section id="realestate">
-<h2>Real Estate Projects</h2>
-<div class="content-cards">
-<div class="card">
-<img src="https://via.placeholder.com/200x120" alt="Overseas Enclave">
-<p>Overseas Enclave – 5 Marla, 7 Marla, 10 Marla & 1 Kanal plots.</p>
-<p>Located in A.S.C Cooperative Housing Society, Phase 2, Nowshera.</p>
-<a href="#" class="btn">Learn More</a>
-</div>
-</div>
-</section>
-
-<!-- Affiliate Section -->
-<section id="affiliate">
-<h2>Recommended Products</h2>
-<div class="content-cards">
-<div class="card">
-<p>Wmcaps Winter Fleece Line Beanie for Men & Women</p>
-<a href="https://amzn.to/4qQyEgu" target="_blank" class="affiliate-btn">Buy Now</a>
-</div>
-<div class="card">
-<p>Wmcaps Winter Beanie Soft Warm Knit Hat</p>
-<a href="https://amzn.to/49IPLup" target="_blank" class="affiliate-btn">Buy Now</a>
-</div>
-</div>
-</section>
-
-<!-- Lifestyle Section -->
-<section id="lifestyle">
-<h2>Lifestyle & YouTube</h2>
-<p>Check out my videos on lifestyle, nature, and family-friendly content.</p>
-<a href="https://www.youtube.com/@rajanadeemakhter52" target="_blank" class="btn">Visit YouTube</a>
-<div class="content-cards">
-<div class="card">
-<img src="https://via.placeholder.com/200x120" alt="Nature">
-<p>Exploring the beauty of nature.</p>
-</div>
-<div class="card">
-<img src="https://via.placeholder.com/200x120" alt="Family Life">
-<p>Family-friendly lifestyle tips.</p>
-</div>
-</div>
-</section>
-
-<!-- Admin Section -->
-<section id="admin-section">
-<h2>Admin Dashboard</h2>
-<p>Total Affiliate Clicks: <span id="click-count">0</span></p>
-<button id="simulate-click">Simulate Click (Test)</button>
-<h3>Notes:</h3>
-<p>All user interactions are safe. No auto-click scripts included.</p>
-</section>
-
+<main class="container" id="home">
+  <section class="hero card">
+    <h2>Welcome to Life — Explore Real Estate, Lifestyle & Deals</h2>
+    <p class="small">Discover our real estate projects, handpicked affiliate deals, and lifestyle videos from the YouTube channel. Scroll or use the menu to jump between sections.</p>
+  </section>
+  <section id="realestate" style="margin-bottom:22px">
+    <h3>Real Estate — Overseas Enclave (A.S.C Cooperative)</h3>
+    <p class="muted">Prime residential plots in A.S.C Cooperative Housing Society — Overseas Enclave, Phase 2, Nowshera.</p>
+    <div class="grid" style="margin-top:12px">
+      <article class="card">
+        <img src="https://via.placeholder.com/600x360?text=Overseas+Enclave" alt="Overseas Enclave">
+        <strong>Overseas Enclave — Residential Plots</strong>
+        <p class="small">Available sizes: 5 Marla, 7 Marla, 10 Marla, 1 Kanal. Good location, development updates available on request.</p>
+        <p style="margin:8px 0"><span class="pill">Nowshera</span></p>
+        <a class="btn" href="mailto:rajanadeemakhter@gmail.com?subject=Inquiry%20About%20Overseas%20Enclave">Inquire via Email</a>
+      </article>
+      <article class="card">
+        <img src="https://via.placeholder.com/600x360?text=Plot+Preview" alt="plot preview">
+        <strong>Plot Preview & Pricing</strong>
+        <p class="small">For pricing, installment plans, and map, contact us. We provide guidance for buyers and overseas clients.</p>
+        <a class="btn" href="tel:+923005049603">Call +92 300 5049603</a>
+      </article>
+    </div>
+  </section>
+  <section id="affiliate" style="margin-bottom:22px">
+    <h3>Affiliate — Recommended Products</h3>
+    <p class="small">These are suggested items I promote. Clicking opens the merchant page in a new tab.</p>
+    <div class="grid" style="margin-top:12px">
+      <article class="card">
+        <img src="https://via.placeholder.com/600x360?text=Winter+Beanie" alt="Wmcaps Winter Fleece Beanie">
+        <strong>Wmcaps Winter Fleece Line Beanie</strong>
+        <p class="small">Warm, fleece-lined beanie for men & women.</p>
+        <a class="btn" href="https://amzn.to/4qQyEgu" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>
+      </article>
+      <article class="card">
+        <img src="https://via.placeholder.com/600x360?text=Winter+Beanie+2" alt="Wmcaps Winter Beanie">
+        <strong>Wmcaps Winter Beanie — Soft Knit</strong>
+        <p class="small">Soft, knitted stocking cap — great value.</p>
+        <a class="btn" href="https://amzn.to/49IPLup" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>
+      </article>
+    </div>
+  </section>
+  <section id="lifestyle" style="margin-bottom:22px">
+    <h3>Lifestyle — YouTube & More</h3>
+    <p class="small">Nature, family-friendly content, food, and lifestyle videos on my YouTube channel.</p>
+    <div style="display:flex;flex-direction:row;gap:14px;flex-wrap:wrap;margin-top:12px">
+      <div class="card" style="flex:1;min-width:250px;">
+        <img src="https://via.placeholder.com/800x450?text=YouTube+Preview" alt="YouTube preview">
+        <strong>Life — YouTube Channel</strong>
+        <p class="small">Subscribe for nature walks, family moments, and lifestyle tips.</p>
+        <a class="btn" href="https://www.youtube.com/@rajanadeemakhter52" target="_blank" rel="noopener noreferrer">Visit YouTube</a>
+      </div>
+      <div style="flex:1;min-width:250px">
+        <div class="card">
+          <strong>Latest Post</strong>
+          <p class="small">Share stories, photos, and tips here. Replace placeholder images with your own for the best look.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contact" style="margin-bottom:22px">
+    <h3>Contact</h3>
+    <p class="small">You can reach me using the details below:</p>
+    <ul class="contact-list">
+      <li><strong>Phone:</strong> <a href="tel:+923005049603">+92 300 5049603</a></li>
+      <li><strong>Email:</strong> <a href="mailto:rajanadeemakhter@gmail.com">rajanadeemakhter@gmail.com</a></li>
+    </ul>
+  </section>
 </main>
-
 <footer>
-<p>© 2025 Life — Designed by Raja Nadeem Akhter</p>
+  <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
+    <div>© 2025 Raja Nadeem Akhter — All rights reserved.</div>
+    <div class="muted small">Designed for Life — Explore Real Estate, Lifestyle & Deals</div>
+  </div>
 </footer>
-
 <script>
-// Admin access
-function promptAdmin() {
-const pwd = prompt("Enter Admin Password:");
-if (pwd === "YourSecurePassword123") { // CHANGE to your actual password
-document.getElementById('admin-section').style.display = 'block';
-document.getElementById('admin-section').scrollIntoView({behavior: 'smooth'});
-} else {
-alert("Incorrect password!");
-}
-}
-
-// Affiliate click simulation
-let clickCount = 0;
-const clickCountSpan = document.getElementById('click-count');
-const simulateClickBtn = document.getElementById('simulate-click');
-if (simulateClickBtn) {
-simulateClickBtn.addEventListener('click', () => {
-clickCount++;
-clickCountSpan.textContent = clickCount;
-});
-}
+(function(){
+const links=document.querySelectorAll('a[href^="#"]');
+links.forEach(a=>{a.addEventListener('click',function(e){const target=document.querySelector(this.getAttribute('href'));if(target){e.preventDefault();window.scrollTo({top:target.getBoundingClientRect().top+window.pageYOffset-70,behavior:'smooth'})}})})
+})();
 </script>
-
 </body>
 </html>

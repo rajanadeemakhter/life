@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Life Admin Dashboard</title>
+<style>
+body{font-family:Arial,sans-serif;padding:20px;background:#f9f9f9;color:#333}
+h1{color:#2c3e50}
+.card{background:#fff;padding:15px;margin:10px 0;border-radius:8px;box-shadow:0 0 6px rgba(0,0,0,0.1)}
+</style>
+</head>
+<body>
+<h1>Admin Dashboard</h1>
+<p>Total Affiliate Clicks: <span id="click-count">0</span></p>
+<button id="simulate-click">Simulate Click (Test)</button>
+
+<div class="card">
+<h2>Notes</h2>
+<p>This dashboard is private. Only visible to the admin.</p>
+</div>
+
+<script>
+let clickCount=0;
+const clickCountSpan=document.getElementById('click-count');
+document.getElementById('simulate-click').addEventListener('click',()=>{
+clickCount++;
+clickCountSpan.textContent=clickCount;
+});
+</script>
+</body>
+</html>
